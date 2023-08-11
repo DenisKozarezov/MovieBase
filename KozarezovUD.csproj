@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA2177AB-71B8-4A09-8CFB-C8AC186C7F54}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KozarezovUD</RootNamespace>
+    <AssemblyName>KozarezovUD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Scripts\Common\Constants.cs" />
+    <Compile Include="Scripts\Common\Enums\AdvancedSearch.cs" />
+    <Compile Include="Scripts\Common\Enums\Countries.cs" />
+    <Compile Include="Scripts\Common\Enums\AuthorizationStatus.cs" />
+    <Compile Include="Scripts\Common\Enums\HashType.cs" />
+    <Compile Include="Scripts\Common\Enums\QueryEnums.cs" />
+    <Compile Include="Scripts\Common\Enums\TableItemAction.cs" />
+    <Compile Include="Scripts\Common\Enums\UserStatus.cs" />
+    <Compile Include="Scripts\Common\Enums\Genres.cs" />
+    <Compile Include="Scripts\Common\Extensions.cs" />
+    <Compile Include="Scripts\Common\Help.cs" />
+    <Compile Include="Scripts\Common\Structs\FilmAdvancedSearchArgs.cs" />
+    <Compile Include="Scripts\Common\Structs\FilmInfo.cs" />
+    <Compile Include="Scripts\Common\Structs\ActorAdvancedSearchArgs.cs" />
+    <Compile Include="Scripts\Common\Structs\UserAdvancedSearchArgs.cs" />
+    <Compile Include="Scripts\Core\Film\FilmCollection.cs" />
+    <Compile Include="Scripts\Core\Interfaces\IPasswordHasher.cs" />
+    <Compile Include="Scripts\Core\Interfaces\IPasswordValidator.cs" />
+    <Compile Include="Scripts\Core\Query\QueryParameter.cs" />
+    <Compile Include="Scripts\Core\Query\QueryParametersBuilder.cs" />
+    <Compile Include="Scripts\Common\UI\Fonts.cs" />
+    <Compile Include="Scripts\Common\Icons\Icons.cs" />
+    <Compile Include="Scripts\Common\Structs\UserInfo.cs" />
+    <Compile Include="Scripts\Common\UI\Styles.cs" />
+    <Compile Include="Scripts\Core\Interfaces\IConfirmAwaiter.cs" />
+    <Compile Include="Scripts\Core\Interfaces\IInteractable.cs" />
+    <Compile Include="Scripts\Core\Query\ActorQuery.cs" />
+    <Compile Include="Scripts\Core\Query\FilmQuery.cs" />
+    <Compile Include="Scripts\Core\Query\GenericQuery.cs" />
+    <Compile Include="Scripts\Core\Query\UserQuery.cs" />
+    <Compile Include="Scripts\Common\Enums\AccessType.cs" />
+    <Compile Include="Scripts\Common\Enums\SecondNames.cs" />
+    <Compile Include="Scripts\Common\Enums\Names.cs" />
+    <Compile Include="Scripts\Core\Random\Random.cs" />
+    <Compile Include="Scripts\Common\Enums\FirstNames.cs" />
+    <Compile Include="Scripts\Common\Structs\AuthorizationResultArgs.cs" />
+    <Compile Include="Scripts\Common\Structs\GenericAdvancedSearchArgs.cs" />
+    <Compile Include="Scripts\Core\UI\BaseUIElement.cs" />
+    <Compile Include="Scripts\Core\UI\CustomListBox.cs" />
+    <Compile Include="Scripts\Core\UI\Dropdown.cs" />
+    <Compile Include="Scripts\Core\UI\MultiListBox.cs" />
+    <Compile Include="Scripts\Core\UI\Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Scripts\Core\UI\TabControl.cs" />
+    <Compile Include="Scripts\Core\UI\TextField.cs" />
+    <Compile Include="Scripts\Core\UI\TextLink.cs" />
+    <Compile Include="Scripts\Core\Security\PasswordHasher.cs" />
+    <Compile Include="Scripts\Core\Security\PasswordValidator.cs" />
+    <Compile Include="Scripts\Core\User\User.cs" />
+    <Compile Include="Scripts\Core\Film\WeekPremiere.cs" />
+    <Compile Include="Scripts\Forms\Pages\AdministratorPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Forms\ConfirmForm.cs" />
+    <Compile Include="Scripts\Forms\DecisionForm.cs" />
+    <Compile Include="Scripts\Forms\FilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Forms\FilmForm.Designer.cs">
+      <DependentUpon>FilmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Forms\Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Forms\Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Forms\AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Forms\AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Core\Interfaces\IDecisionAwaiter.cs" />
+    <Compile Include="Scripts\Forms\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Forms\OptionsForm.Designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Forms\Pages\ModeratorPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Forms\PasswordChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Forms\PasswordChangeForm.Designer.cs">
+      <DependentUpon>PasswordChangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Forms\PersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Forms\PersonForm.Designer.cs">
+      <DependentUpon>PersonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Forms\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scripts\Forms\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Scripts\Forms\FilmForm.resx">
+      <DependentUpon>FilmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Forms\Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Forms\AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Forms\OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Forms\PasswordChangeForm.resx">
+      <DependentUpon>PasswordChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Forms\PersonForm.resx">
+      <DependentUpon>PersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Forms\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-item-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-item-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-profile-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile-exit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile-change-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\genre-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedestal-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
